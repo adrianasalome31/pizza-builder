@@ -1,0 +1,41 @@
+@import 'bootstrap';
+
+$nav-color: #11BB99;
+
+#nav-color {
+    background-color: $nav-color;
+}
+
+.center {
+    text-align: center;
+}
+
+/*Changes the backgroud of main content in jumbotron*/
+.jumbotron {
+    background-image: asset-url('pizza.jpg');
+    background-size: cover;
+    height: 375px;
+}
+
+.jumbotron h1 {
+    font-size: 63px;
+    color: #ffffff;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.jumbotron h2 {
+font-size: 63px;
+color: #ffffff;
+font-weight: bold;
+letter-spacing: -1px;
+text-align: center;
+}
+
+.ingredientes-actions {
+    padding-top: 5px;
+
+    a {
+        color: #fff;
+    }
+}

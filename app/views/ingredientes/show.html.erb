@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2 mx-auto">
+        <div class="card mx-auto">
+            <div class="card-body bg-light">
+                <h4 class="center card-title"> <%= @ingrediente.nombre %> </h4>
+                <br>
+                <h4 class="center description"><strong>Precio: </strong></h4>
+                
+                <p class="center"><%= @ingrediente.precio %></p>
+
+                <hr>
+                <div class="ingrediente-actions center">
+                    <%= link_to "Editar ingrediente", edit_ingrediente_path(@ingrediente), class: "btn btn-sm btn-warning" %>
+                    <%= link_to "Eliminar ingrediente", ingrediente_path(@ingrediente), method: :delete, 
+                                                data: { confirm: "¿Seguro quieras borrar este ingrediente?" },
+                                                class: "btn btn-sm btn-danger" %>
+                    <%= link_to "Regresar a la lista", ingredientes_path, class: "btn btn-sm btn-primary" %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<br>
+<h1 align="center">Ingredientes</h1>
+<hr>
+
+<% @ingredientes.each do |ingrediente| %>
+
+    <div class="row">
+    <div class="col-md-8 offset-2">
+        <div class="card card-body bg-light">
+            <h4 class="card-title"> <%= link_to ingrediente.nombre, ingrediente_path(ingrediente) %> </h4>
+            <p class="card-text"> <%= ingrediente.precio %> córdobas</p>
+            <p> 
+            <span class="quiet"><small class="card-text">Created <%=time_ago_in_words(ingrediente.created_at)%> ago</small></span>
+            </p>
+        </div>
+        <br>  
+    </div>
+    </div>
+
+    
+<% end %>
+
+<br>
+
+<%= link_to 'New Ingrediente', new_ingrediente_path %>
