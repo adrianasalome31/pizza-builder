@@ -13,6 +13,10 @@ gem 'rails', '~> 5.1.4'
 #bootstrap4
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
+
+# Paperclip for saving images in database
+gem "paperclip", "~> 5.2.1"
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets

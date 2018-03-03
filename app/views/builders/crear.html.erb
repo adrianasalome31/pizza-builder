@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<br>
+<h1 align="center">Crear pizza</h1>
+<hr>
+
+<div class="row">
+
+    <div class="col">
+        <% @ingredientes.each do |ingrediente| %>
+            <div class="form-check">
+                <%= check_box_tag(:ingrediente) %>
+                <%= label_tag(:ingrediente, ingrediente.nombre) %>
+            </div>
+            
+        <% end %>
+    </div>
+
+    <div class="col base-pizza">
+        <%= image_tag @pan.imagen.url %>
+        <%= image_tag @salsa.imagen.url, class: "ingrediente" %>
+    </div>
+
+    <div class="col">#por aquí va el precio</div>
+</div>
