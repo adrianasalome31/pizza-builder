@@ -4,6 +4,12 @@
 <h1 align="center">Ingredientes</h1>
 <hr>
 
+<div class="row">
+    <div class="col-md-8 offset-2">
+        <h4 align="center"> <%= link_to "Nuevo ingrediente", new_ingrediente_path %> </h4>
+    </div>
+</div>
+
 <% @ingredientes.each do |ingrediente| %>
 
     <div class="row">
