@@ -20,7 +20,8 @@
             </div>
 
             <div class="form-group col-md-8 offset-2">
-                <%= f.submit class: "btn btn-primary" %>
+                <%= f.submit(@ingrediente.new_record? ? "Crear ingrediente" : "Editar ingrediente",
+                                                            class: "btn btn-primary") %>
             </div>
         <% end %>
         <div class="col-md-4 offset-4 color-match">
