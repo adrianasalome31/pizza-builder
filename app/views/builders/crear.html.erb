@@ -9,7 +9,7 @@
     <div class="col">
         <% @ingredientes.each do |ingrediente| %>
             <div class="form-check">
-                <%= check_box_tag(ingrediente.id, ingrediente.id, false, :onclick => "mostrarIngrediente(#{ingrediente.id.to_s+"i"});") %>
+                <%= check_box_tag(ingrediente.id, ingrediente.id, false, :onclick => "mostrarIngrediente('#{ingrediente.id.to_s}','#{ingrediente.id.to_s+"i"}')")%>
                 <%= label_tag(ingrediente.id, ingrediente.nombre) %>
             </div>
             
