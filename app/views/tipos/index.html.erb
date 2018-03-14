@@ -1,0 +1,30 @@
+<br>
+<h1 align="center">Tipos de ingredientes</h1>
+<hr>
+
+<br>
+<div class="row">
+    <div class="col-md-8 offset-2">
+        <h4 align="center"> <%= link_to "Nuevo tipo de ingrediente", new_tipo_path %> </h4>
+    </div>
+</div>
+<br>
+
+<% @tipos.each do |tipo| %>
+
+    <div class="row">
+    <div class="col-md-6 mx-auto offset-2">
+        <div class="card card-body justify-content-center bg-light">
+            <h4 class="card-title" align="center"> <%= link_to tipo.nombre, tipo_path(tipo) %> </h4>
+            <p align="center"> 
+            <span class="quiet" ><small class="card-text">Created <%=time_ago_in_words(tipo.created_at)%> ago</small></span>
+            </p>
+        </div>
+        <br>  
+    </div>
+    </div>
+
+    
+<% end %>
+
+<br>

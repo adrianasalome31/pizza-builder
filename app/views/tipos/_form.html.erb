@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-md-12">
+        <%= form_for(@tipo, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+            <div class="form-group col-md-8 offset-2">
+                <%= f.label :nombre %>
+                <%= f.text_field :nombre, class: "form-control", maxlength: 20, placeholder: "Nombre del tipo de ingrediente", autofocus: true %>
+            </div>
+
+            <div class="form-group col-md-8 offset-2">
+                <%= f.submit(@tipo.new_record? ? "Crear tipo de ingrediente" : "Editar tipo de ingrediente",
+                                                            class: "btn btn-primary") %>
+            </div>
+        <% end %>
+        <div class="col-md-4 offset-4 color-match">
+            [ <%= link_to "Regresar a la lista de tipos de ingredientes", tipos_path %> ]
+        </div>
+    </div>
+</div>

@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get '/signup', to: 'usuarios#new'
   resources :usuarios, except: [:new]
 
+  resources :tipos
+
 end

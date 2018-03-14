@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-md-8 col-md-offset-2 mx-auto">
+        <div class="card mx-auto">
+            <div class="card-body bg-light">
+                <h4 class="center card-title"> Tipo: <%= @tipo.nombre %> </h4>
+                <br>
+
+                <hr>
+                <div class="ingrediente-actions center">
+                    <%= link_to "Editar tipo de ingrediente", edit_tipo_path(@tipo), class: "btn btn-sm btn-warning" %>
+                    <%= link_to "Eliminar tipo de ingrediente", tipo_path(@tipo), method: :delete, 
+                                                data: { confirm: "¿Seguro quieras borrar este tipo de ingrediente?" },
+                                                class: "btn btn-sm btn-danger" %>
+                    <%= link_to "Regresar a la lista", tipos_path, class: "btn btn-sm btn-primary" %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
