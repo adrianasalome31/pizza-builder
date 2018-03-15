@@ -15,6 +15,7 @@ class IngredientesController < ApplicationController
   # GET /ingredientes/new
   def new
     @ingrediente = Ingrediente.new
+    @tipos = Tipo.all
   end
 
   # GET /ingredientes/1/edit
@@ -72,6 +73,6 @@ class IngredientesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ingrediente_params
-      params.require(:ingrediente).permit(:nombre, :precio, :imagen)
+      params.require(:ingrediente).permit(:nombre, :precio, :tipo_id, :imagen)
     end
 end
