@@ -27,30 +27,22 @@ class IngredientesController < ApplicationController
   def create
     @ingrediente = Ingrediente.new(ingrediente_params)
 
-    respond_to do |format|
-      if @ingrediente.save
-        flash[:success] = "Ingrediente agregado exitosamente "
-        format.html { redirect_to @ingrediente}
-        format.json { render :show, status: :created, location: @ingrediente }
-      else
-        format.html { render :new }
-        format.json { render json: @ingrediente.errors, status: :unprocessable_entity }
-      end
+    if @ingrediente.save
+      flash[:success] = "Ingrediente agregado exitosamente "
+      redirect_to ingrediente_path(@ingrediente)
+    else
+      render 'new'
     end
   end
 
   # PATCH/PUT /ingredientes/1
   # PATCH/PUT /ingredientes/1.json
   def update
-    respond_to do |format|
-      if @ingrediente.update(ingrediente_params)
-        flash[:success] = "Ingrediente editado exitosamente"
-        format.html { redirect_to @ingrediente}
-        format.json { render :show, status: :ok, location: @ingrediente }
-      else
-        format.html { render :edit }
-        format.json { render json: @ingrediente.errors, status: :unprocessable_entity }
-      end
+    if @ingrediente.update(ingrediente_params)
+      flash[:success] = "Ingrediente editado exitosamente"
+      redirect_to ingrediente_path(@ingrediente)
+    else
+      render 'ingredientes/edit'
     end
   end
 
@@ -59,10 +51,7 @@ class IngredientesController < ApplicationController
   def destroy
     @ingrediente.destroy
     flash[:danger] = "Ingrediente eliminado exitosamente"
-    respond_to do |format|
-      format.html { redirect_to ingredientes_url}
-      format.json { head :no_content }
-    end
+    redirect_to ingredientes_path
   end
 
   private
