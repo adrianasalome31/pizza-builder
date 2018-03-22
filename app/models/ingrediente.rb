@@ -7,4 +7,8 @@ class Ingrediente < ApplicationRecord
     validates :tipo_id, presence: true
 
     belongs_to :tipo
+
+    has_many :pizza_ingredientes
+    has_many :pizzas, through: :pizza_ingredientes
+
 end

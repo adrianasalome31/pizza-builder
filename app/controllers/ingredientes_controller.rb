@@ -20,13 +20,14 @@ class IngredientesController < ApplicationController
 
   # GET /ingredientes/1/edit
   def edit
+    @tipos = Tipo.all
   end
 
   # POST /ingredientes
   # POST /ingredientes.json
   def create
+    @tipos = Tipo.all
     @ingrediente = Ingrediente.new(ingrediente_params)
-
     if @ingrediente.save
       flash[:success] = "Ingrediente agregado exitosamente "
       redirect_to ingrediente_path(@ingrediente)
@@ -38,6 +39,7 @@ class IngredientesController < ApplicationController
   # PATCH/PUT /ingredientes/1
   # PATCH/PUT /ingredientes/1.json
   def update
+    @tipos = Tipo.all
     if @ingrediente.update(ingrediente_params)
       flash[:success] = "Ingrediente editado exitosamente"
       redirect_to ingrediente_path(@ingrediente)
