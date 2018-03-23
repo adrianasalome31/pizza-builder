@@ -17,6 +17,10 @@ $nav-color: #11BB99;
     height: 375px;
 }
 
+.home-background {
+    background-image: asset-url('pizza.jpg');
+}
+
 .jumbotron h1 {
     font-size: 63px;
     color: #ffffff;

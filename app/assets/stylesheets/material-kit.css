@@ -16384,6 +16384,13 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
     background: -webkit-linear-gradient(135deg, rgba(101, 47, 142, 0.88) 0%, rgba(125, 46, 185, 0.45) 100%);
 }
 
+.purple-filter-soft:after {
+    background: rgba(101, 47, 142, 0.164);
+    background: linear-gradient(45deg, rgba(101, 47, 142, 0.452) 0%, rgba(125, 46, 185, 0.39) 100%);
+    background: -moz-linear-gradient(135deg, rgba(101, 47, 142, 0.507) 0%, rgba(125, 46, 185, 0.418) 100%);
+    background: -webkit-linear-gradient(135deg, rgba(101, 47, 142, 0.418) 0%, rgba(125, 46, 185, 0.418) 100%);
+}
+
 footer {
     padding: 0.9375rem 0;
     text-align: center;
