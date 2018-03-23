@@ -14,14 +14,14 @@
                     
                 <% tipo.ingredientes.each do |ingrediente| %>
                     <div class="form-check">
-                        <%= check_box_tag :ingrediente_ids, ingrediente.id, @pizza.ingredientes.include?(ingrediente), :name => 'pizza[ingrediente_ids][]', class: "ingrediente_check" -%>
+                        <%= check_box_tag :ingrediente_ids, ingrediente.id, @pizza.ingredientes.include?(ingrediente), :name => 'pizza[ingrediente_ids][]', class: "ingrediente-check" -%>
                         <%= label_tag :ingrediente_ids, ingrediente.nombre -%>
                         
                     </div>
                 <% end %>
-                    
-                
-           <% end %> 
+           <% end %>
+
+           <%= f.submit "Ordenar", class: "btn btn-rose" %> 
            
         <% end %>
     </div>
@@ -36,7 +36,7 @@
         <% @tipos.each do |t| %>
             <% t.ingredientes.each do |ingrediente| %>
                 <%= image_tag ingrediente.imagen.url, class: "ingrediente ingrediente-oculto", 
-                id: "ingrediente_img"+ingrediente.id.to_s, type: "hidden" %>
+                id: "ingrediente-img"+ingrediente.id.to_s, type: "hidden" %>
             <% end %>
             
         <% end %>
@@ -44,5 +44,6 @@
 
     <div class="col">
         <h4 align="center" class="title">Precio</h4>
+        <div class="ingrediente-precio"></div>
     </div>
 </div>
