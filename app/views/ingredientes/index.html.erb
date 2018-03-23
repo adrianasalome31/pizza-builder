@@ -5,24 +5,25 @@
 <br>
 <div class="row">
     <div class="col-md-8 offset-2">
-        <h4 align="center"> <%= link_to "Nuevo ingrediente", new_ingrediente_path %> </h4>
+        <h4 align="center"> <%= link_to "Crear nuevo", new_ingrediente_path %> </h4>
     </div>
 </div>
 <br>
 
 <% @ingredientes.each do |ingrediente| %>
 
-    <div class="row">
+    <div class="row section-tabs">
     <div class="col-md-6 mx-auto offset-2">
         <div class="card card-body justify-content-center bg-light">
-            <h4 class="card-title" align="center"> <%= link_to ingrediente.nombre, ingrediente_path(ingrediente) %> </h4>
+            <div class="tim-typo">
+                <h4 class="title" align="center"> <%= link_to ingrediente.nombre, ingrediente_path(ingrediente) %> </h4>
+            </div>
             <p class="card-text" align="center"> <%= ingrediente.precio %> córdobas</p>
             <p align="center"> <%= image_tag ingrediente.imagen.url(:small) %> </p>
             <p align="center"> 
             <span class="quiet" ><small class="card-text">Created <%=time_ago_in_words(ingrediente.created_at)%> ago</small></span>
             </p>
         </div>
-        <br>  
     </div>
     </div>
 
