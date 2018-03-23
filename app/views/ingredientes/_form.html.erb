@@ -16,14 +16,16 @@
                 <%= f.select :tipo_id, @tipos.collect{ |t| [t.nombre, t.id] }, {:include_blank => 'Seleccione'}, class: "custom-select" %>
             </div>
             
+            <br>
 
-            <div class="form-group col-md-8 offset-2">
+            <div class="col-md-8 offset-2">
                 <div class="custom-file">
                     <%= f.label "Seleccionar imagen", class: "custom-file-label" %>
-                    <%= f.file_field :imagen, class: "custom-file-input", lang: "es" %>
+                    <%= f.file_field :imagen, class: "custom-file-input" %>
                 </div>
-                
             </div>
+
+            <br>
 
             <div class="form-group col-md-8 offset-2">
                 <%= f.submit(@ingrediente.new_record? ? "Crear ingrediente" : "Editar ingrediente",
