@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+<br>
+<h1 align="center" class="title">Crear pizza</h1>
+<hr>
+
+<div class="row">
+
+    <div class="col">
+        <%= form_for(@pizza, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+        
+           <% @tipos.each do |tipo| %>
+                <h4 class="title"> <%= tipo.nombre %> </h4>
+                <hr>
+                    
+                <% tipo.ingredientes.each do |ingrediente| %>
+                    <div class="form-check">
+                        <%= check_box_tag :ingrediente_ids, ingrediente.id, @pizza.ingredientes.include?(ingrediente), :name => 'pizza[ingrediente_ids][]', class: "ingrediente_check" -%>
+                        <%= label_tag :ingrediente_ids, ingrediente.nombre -%>
+                        
+                    </div>
+                <% end %>
+                    
+                
+           <% end %> 
+           
+        <% end %>
+    </div>
+
+    <div class="col base-pizza">
+        <% @base.each do |b| %>
+            <% b.ingredientes.each do |ingrediente| %>
+                <%= image_tag ingrediente.imagen.url %>
+            <% end %>
+        <% end %>
+
+        <% @tipos.each do |t| %>
+            <% t.ingredientes.each do |ingrediente| %>
+                <%= image_tag ingrediente.imagen.url, class: "ingrediente ingrediente-oculto", 
+                id: "ingrediente_img"+ingrediente.id.to_s, type: "hidden" %>
+            <% end %>
+            
+        <% end %>
+    </div>
+
+    <div class="col">
+        <h4 align="center" class="title">Precio</h4>
+    </div>
+</div>

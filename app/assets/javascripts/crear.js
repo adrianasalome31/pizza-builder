@@ -1,10 +1,22 @@
 //= require jquery3
 
-    function mostrarIngrediente(ingrediente_id, ingrediente){
-        $('#'+ingrediente_id).change(function (){
-            if (this.checked)
-                $('#'+ingrediente).fadeIn('slow');
-            else
-                $('#'+ingrediente).fadeOut('slow');
-        });
+    function recorrerImagenes() {
+
     }
+
+    function mostrarImagenIngrediente() {
+        $('.ingrediente_check:checkbox').each(function () {
+            if(this.checked)
+                $('#ingrediente_img'+this.value).fadeIn('slow');
+            else
+                $('#ingrediente_img'+this.value).fadeOut('slow');
+        })
+    }
+
+    $(document).ready(function() {
+        
+        $('.ingrediente_check:checkbox').click(mostrarImagenIngrediente);
+
+    });
+
+    
