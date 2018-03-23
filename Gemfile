@@ -14,6 +14,9 @@ gem 'rails', '~> 5.1.4'
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 
+#material-icons
+gem 'material_icons'
+
 #For assert_template
 gem 'rails-controller-testing'
 
